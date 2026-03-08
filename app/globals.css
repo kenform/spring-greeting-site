@@ -109,6 +109,25 @@ body {
   }
 }
 
+.hero-title {
+  color: #5c4768;
+  background: linear-gradient(92deg, #5f4b6d 0%, #76608a 46%, #5a607b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  text-shadow: 0 8px 26px rgba(103, 79, 118, 0.08);
+}
+
+.hero-title-name {
+  margin-inline: 0.16em;
+  padding-inline: 0.16em;
+  border-radius: 0.4em;
+  background: linear-gradient(90deg, rgba(255, 227, 240, 0.62), rgba(235, 229, 255, 0.52));
+  -webkit-text-fill-color: #684f7a;
+  box-decoration-break: clone;
+}
+
 @keyframes petal-fall {
   0% {
     transform: translate3d(0, 0, 0) rotate(var(--spin-start));

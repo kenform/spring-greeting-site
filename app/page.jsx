@@ -4,12 +4,13 @@ import AtmosphericBackground from '../components/AtmosphericBackground';
 import GlowParticles from '../components/GlowParticles';
 import { siteContent } from '../content/siteContent';
 
-function buildTitle(template, recipientName) {
-  return template.replace('[Имя]', recipientName);
+function buildTitleParts(template, recipientName) {
+  const [before = '', after = ''] = template.split('[Имя]');
+  return { before, name: recipientName, after };
 }
 
 export default function HomePage() {
-  const title = buildTitle(siteContent.titleTemplate, siteContent.recipientName);
+  const title = buildTitleParts(siteContent.titleTemplate, siteContent.recipientName);
   const paragraphs = siteContent.message.split('\n').filter(Boolean);
 
   return (
@@ -22,7 +23,11 @@ export default function HomePage() {
         <div className="card-shimmer" aria-hidden="true" />
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
-          <h1 className="text-balance text-3xl font-semibold leading-[1.15] text-[#5d456d] sm:text-5xl">{title}</h1>
+          <h1 className="hero-title text-balance text-3xl font-semibold leading-[1.12] sm:text-5xl">
+            {title.before}
+            <span className="hero-title-name">{title.name}</span>
+            {title.after}
+          </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#745f82] sm:text-lg">
             {siteContent.subtitle}
           </p>
