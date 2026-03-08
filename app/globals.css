@@ -89,12 +89,6 @@ body {
   z-index: 1;
 }
 
-@media (hover: hover) {
-  .glass-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 28px 70px rgba(48, 30, 64, 0.24), 0 0 54px rgba(255, 233, 247, 0.24);
-  }
-}
 
 .glass-card > * {
   position: relative;
