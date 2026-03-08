@@ -162,6 +162,10 @@ body {
   background: transparent;
   -webkit-text-fill-color: inherit;
   box-decoration-break: clone;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(4px);
+  animation: name-soft-reveal 0.8s ease-out 0.45s forwards;
 }
 
 .wish-line {
@@ -190,6 +194,19 @@ body {
   }
   50% {
     opacity: 0.85;
+  }
+}
+
+@keyframes name-soft-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
