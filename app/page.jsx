@@ -26,12 +26,12 @@ export default function HomePage() {
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
           <div className="mx-auto mb-4 h-px w-28 bg-gradient-to-r from-transparent via-[#b895c5]/75 to-transparent" aria-hidden="true" />
-          <h1 className="hero-title text-balance text-3xl font-semibold leading-[1.12] sm:text-5xl">
+          <h1 className="hero-title text-balance text-[2.15rem] font-semibold leading-[1.1] sm:text-[3.45rem]">
             {title.before}
             <span className="hero-title-name">{title.name}</span>
             {title.after}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#745f82] sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-[1.08rem] leading-8 text-[#745f82] sm:text-[1.22rem]">
             {siteContent.subtitle}
           </p>
         </header>
