@@ -2,6 +2,7 @@ import ComplimentRotator from '../components/ComplimentRotator';
 import PetalField from '../components/PetalField';
 import AtmosphericBackground from '../components/AtmosphericBackground';
 import GlowParticles from '../components/GlowParticles';
+import MainMessageAuto from '../components/MainMessageAuto';
 import { siteContent } from '../content/siteContent';
 
 function buildTitleParts(template, recipientName) {
@@ -11,7 +12,6 @@ function buildTitleParts(template, recipientName) {
 
 export default function HomePage() {
   const title = buildTitleParts(siteContent.titleTemplate, siteContent.recipientName);
-  const paragraphs = siteContent.message.split('\n').filter(Boolean);
 
   return (
     <main className="relative min-h-screen overflow-hidden px-4 py-8 text-[#4f3e58] sm:px-8 sm:py-10">
@@ -36,13 +36,7 @@ export default function HomePage() {
           </p>
         </header>
 
-        <article className="animate-fade-up mx-auto w-full max-w-[565px] space-y-3.5 rounded-2xl bg-white/64 p-5 sm:p-6" style={{ animationDelay: '0.15s' }}>
-          {paragraphs.map((line, idx) => (
-            <p key={idx} className="text-[1rem] leading-[1.62] text-[#4a3f5a] sm:text-[1.06rem]">
-              {line}
-            </p>
-          ))}
-        </article>
+        <MainMessageAuto intro={siteContent.messageIntro} variants={siteContent.messageVariants} />
 
         <section className="animate-fade-up rounded-[1.35rem] border border-[#efbfd6]/85 bg-gradient-to-r from-[#ffeaf1d9] via-[#f4ecffe6] to-[#e8f3ffe0] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_12px_34px_rgba(170,136,184,0.2)] sm:p-6" style={{ animationDelay: '0.25s' }}>
           <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.14em] text-[#7f608e]">Мои пожелания</h2>
