@@ -3,6 +3,7 @@ import PetalField from '../components/PetalField';
 import AtmosphericBackground from '../components/AtmosphericBackground';
 import GlowParticles from '../components/GlowParticles';
 import MainMessageAuto from '../components/MainMessageAuto';
+import TiltCard from '../components/TiltCard';
 import { siteContent } from '../content/siteContent';
 
 function buildTitleParts(template, recipientName) {
@@ -20,7 +21,7 @@ export default function HomePage() {
       <GlowParticles />
       <div className="card-backlight" aria-hidden="true" />
 
-      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_34px_90px_rgba(44,32,62,0.2),0_12px_30px_rgba(70,52,92,0.12),0_0_56px_rgba(255,233,247,0.18)] backdrop-blur-3xl ring-1 ring-white/70 sm:p-10">
+      <TiltCard className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_34px_90px_rgba(44,32,62,0.2),0_12px_30px_rgba(70,52,92,0.12),0_0_56px_rgba(255,233,247,0.18)] backdrop-blur-3xl ring-1 ring-white/70 sm:p-10">
         <div className="card-border-shimmer" aria-hidden="true" />
         <div className="card-shimmer" aria-hidden="true" />
 
@@ -49,7 +50,7 @@ export default function HomePage() {
         <footer className="animate-fade-up pt-2 text-right text-sm text-[#7d6788] sm:text-base" style={{ animationDelay: '0.35s' }}>
           {siteContent.signature}
         </footer>
-      </section>
+      </TiltCard>
     </main>
   );
 }
