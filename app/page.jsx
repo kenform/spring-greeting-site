@@ -26,6 +26,7 @@ export default function HomePage() {
         <div className="card-shimmer" aria-hidden="true" />
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
+          <p className="mb-3 text-[0.72rem] font-medium uppercase tracking-[0.34em] text-[#9d88ad] sm:text-[0.76rem]">8 марта</p>
           <div className="mx-auto mb-4 h-px w-28 bg-gradient-to-r from-transparent via-[#b895c5]/75 to-transparent" aria-hidden="true" />
           <h1 className="hero-title text-balance text-[2.15rem] font-semibold leading-[1.1] sm:text-[3.45rem]">
             {title.before}
