@@ -18,6 +18,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.card-backlight {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: min(86vw, 980px);
+  height: min(62vh, 620px);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 246, 235, 0.5) 0%, rgba(255, 245, 252, 0.28) 42%, rgba(255, 255, 255, 0) 76%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .animate-fade-up {
   opacity: 0;
   transform: translateY(16px);
@@ -149,6 +162,17 @@ body {
   background: transparent;
   -webkit-text-fill-color: inherit;
   box-decoration-break: clone;
+}
+
+.wish-line {
+  opacity: 0;
+  filter: blur(4px);
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.wish-line.is-visible {
+  opacity: 1;
+  filter: blur(0);
 }
 
 .typing-caret {

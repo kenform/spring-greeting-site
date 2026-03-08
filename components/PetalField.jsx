@@ -1,10 +1,25 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const PETALS_COUNT = 18;
 
 export default function PetalField() {
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia('(hover: hover)').matches) return;
+
+    const onMove = (event) => {
+      const x = ((event.clientX / window.innerWidth) - 0.5) * 6;
+      const y = ((event.clientY / window.innerHeight) - 0.5) * 6;
+      setOffset({ x, y });
+    };
+
+    window.addEventListener('mousemove', onMove, { passive: true });
+    return () => window.removeEventListener('mousemove', onMove);
+  }, []);
+
   const petals = useMemo(
     () =>
       Array.from({ length: PETALS_COUNT }, (_, i) => ({
@@ -21,7 +36,11 @@ export default function PetalField() {
   );
 
   return (
-    <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none fixed inset-0 overflow-hidden transition-transform duration-500 ease-out"
+      style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }}
+      aria-hidden="true"
+    >
       {petals.map((petal) => (
         <span
           key={petal.id}

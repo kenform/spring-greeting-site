@@ -18,11 +18,13 @@ export default function HomePage() {
       <AtmosphericBackground />
       <PetalField />
       <GlowParticles />
+      <div className="card-backlight" aria-hidden="true" />
 
-      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/75 bg-white/85 p-5 shadow-[0_22px_62px_rgba(48,30,64,0.2),0_0_44px_rgba(255,233,247,0.18)] backdrop-blur-2xl ring-1 ring-white/60 sm:p-10">
+      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_24px_70px_rgba(48,30,64,0.2),0_0_54px_rgba(255,233,247,0.2)] backdrop-blur-3xl ring-1 ring-white/70 sm:p-10">
         <div className="card-shimmer" aria-hidden="true" />
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
+          <div className="mx-auto mb-4 h-px w-28 bg-gradient-to-r from-transparent via-[#b895c5]/75 to-transparent" aria-hidden="true" />
           <h1 className="hero-title text-balance text-3xl font-semibold leading-[1.12] sm:text-5xl">
             {title.before}
             <span className="hero-title-name">{title.name}</span>
@@ -41,7 +43,7 @@ export default function HomePage() {
           ))}
         </article>
 
-        <section className="animate-fade-up rounded-[1.35rem] border border-white/65 bg-gradient-to-r from-[#ffe7efcf] via-[#f2e9ffd9] to-[#e4f1ffd1] p-6 shadow-[0_12px_34px_rgba(170,136,184,0.22)] sm:p-8" style={{ animationDelay: '0.25s' }}>
+        <section className="animate-fade-up rounded-[1.35rem] border border-white/70 bg-gradient-to-r from-[#ffeaf1d9] via-[#f4ecffe6] to-[#e8f3ffe0] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_12px_34px_rgba(170,136,184,0.2)] sm:p-8" style={{ animationDelay: '0.25s' }}>
           <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.14em] text-[#7f608e]">Мои пожелания</h2>
           <ComplimentRotator
             compliments={siteContent.compliments}

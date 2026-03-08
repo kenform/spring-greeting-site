@@ -12,6 +12,7 @@ export default function ComplimentRotator({ compliments, rotateMinutes = 5 }) {
 
   const [index, setIndex] = useState(() => Math.floor(Math.random() * safeCompliments.length));
   const [typedText, setTypedText] = useState('');
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const fullText = safeCompliments[index] || '';
@@ -31,15 +32,19 @@ export default function ComplimentRotator({ compliments, rotateMinutes = 5 }) {
     const duration = Math.max(1, rotateMinutes) * 60 * 1000;
 
     const rotateTimer = setInterval(() => {
-      setIndex((prev) => {
-        if (safeCompliments.length === 1) return prev;
+      setVisible(false);
+      setTimeout(() => {
+        setIndex((prev) => {
+          if (safeCompliments.length === 1) return prev;
 
-        let next = prev;
-        while (next === prev) {
-          next = Math.floor(Math.random() * safeCompliments.length);
-        }
-        return next;
-      });
+          let next = prev;
+          while (next === prev) {
+            next = Math.floor(Math.random() * safeCompliments.length);
+          }
+          return next;
+        });
+        setVisible(true);
+      }, 300);
     }, duration);
 
     return () => clearInterval(rotateTimer);
@@ -48,7 +53,7 @@ export default function ComplimentRotator({ compliments, rotateMinutes = 5 }) {
   const isTyping = typedText.length < (safeCompliments[index] || '').length;
 
   return (
-    <p className="min-h-[72px] text-lg leading-relaxed text-[#5f486d]">
+    <p className={`wish-line min-h-[72px] text-lg leading-relaxed text-[#4f3c5f] ${visible ? 'is-visible' : ''}`}>
       {typedText}
       <span className={`typing-caret ${isTyping ? 'opacity-100' : 'opacity-0'}`}>|</span>
     </p>
