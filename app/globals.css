@@ -196,10 +196,10 @@ body {
   -webkit-text-fill-color: inherit;
   color: inherit;
   box-decoration-break: clone;
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(4px);
-  animation: name-soft-reveal 0.8s ease-out 0.45s forwards;
+  display: inline;
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
 .wish-line {
