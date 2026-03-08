@@ -21,6 +21,7 @@ export default function HomePage() {
       <div className="card-backlight" aria-hidden="true" />
 
       <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_24px_70px_rgba(48,30,64,0.2),0_0_54px_rgba(255,233,247,0.2)] backdrop-blur-3xl ring-1 ring-white/70 sm:p-10">
+        <div className="card-border-shimmer" aria-hidden="true" />
         <div className="card-shimmer" aria-hidden="true" />
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>

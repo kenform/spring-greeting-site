@@ -101,13 +101,34 @@ body {
   z-index: 2;
 }
 
+.card-border-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+}
+
+.card-border-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: -120% -40%;
+  background: linear-gradient(120deg, transparent 42%, rgba(255, 255, 255, 0.34) 50%, transparent 58%);
+  opacity: 0.14;
+  transform: translateX(-45%) rotate(10deg);
+  animation: border-shimmer 12s ease-in-out infinite;
+}
+
 .card-shimmer {
   position: absolute;
   inset: -35% -80%;
   z-index: 1;
   pointer-events: none;
   background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.2) 50%, transparent 65%);
-  opacity: 0.22;
+  opacity: 0.16;
   transform: translateX(-45%) rotate(8deg);
   animation: card-shimmer 9s ease-in-out infinite;
 }
@@ -121,15 +142,27 @@ body {
   will-change: transform, opacity;
 }
 
+@keyframes border-shimmer {
+  0%,
+  100% {
+    transform: translateX(-52%) rotate(10deg);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translateX(52%) rotate(10deg);
+    opacity: 0.16;
+  }
+}
+
 @keyframes card-shimmer {
   0%,
   100% {
     transform: translateX(-48%) rotate(8deg);
-    opacity: 0.12;
+    opacity: 0.1;
   }
   50% {
     transform: translateX(48%) rotate(8deg);
-    opacity: 0.24;
+    opacity: 0.18;
   }
 }
 
