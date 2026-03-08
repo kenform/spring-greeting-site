@@ -39,23 +39,30 @@ body {
 
 .petal-svg {
   position: absolute;
-  top: -14%;
   animation-name: petal-fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  will-change: transform;
+  will-change: transform, opacity;
+}
+
+.petal-back {
+  opacity: calc(var(--petal-opacity) * 0.92);
+}
+
+.petal-front {
+  opacity: var(--petal-opacity);
 }
 
 .petal-far {
-  opacity: 0.48;
+  opacity: calc(var(--petal-opacity) * 0.86);
 }
 
 .petal-mid {
-  opacity: 0.58;
+  opacity: calc(var(--petal-opacity) * 0.94);
 }
 
 .petal-near {
-  opacity: 0.68;
+  opacity: var(--petal-opacity);
 }
 
 @keyframes fade-up {
@@ -250,17 +257,25 @@ body {
 @keyframes petal-fall {
   0% {
     transform: translate3d(0, 0, 0) rotate(var(--spin-start));
+    opacity: 0;
   }
-  30% {
+  10% {
+    opacity: var(--petal-opacity);
+  }
+  28% {
     transform: translate3d(calc(var(--drift) * 0.42), 34vh, 0) rotate(calc(var(--spin-start) + 70deg));
   }
   55% {
     transform: translate3d(var(--drift), 62vh, 0) rotate(calc(var(--spin-start) + 145deg));
   }
-  75% {
-    transform: translate3d(calc(var(--drift) + var(--sway)), 82vh, 0) rotate(calc(var(--spin-start) + 210deg));
+  72% {
+    transform: translate3d(calc(var(--drift) + var(--wind-kick)), 78vh, 0) rotate(calc(var(--spin-start) + 190deg));
+  }
+  84% {
+    transform: translate3d(calc(var(--drift) + var(--sway)), 92vh, 0) rotate(calc(var(--spin-start) + 240deg));
   }
   100% {
-    transform: translate3d(calc(var(--drift) * -0.55), 112vh, 0) rotate(calc(var(--spin-start) + 290deg));
+    transform: translate3d(calc(var(--drift) * -0.55), 112vh, 0) rotate(calc(var(--spin-start) + 300deg));
+    opacity: 0;
   }
 }
