@@ -66,7 +66,7 @@ export default function ComplimentRotator({ compliments, rotateMinutes = 5 }) {
   const isTyping = typedText.length < fullText.length;
 
   return (
-    <p className={`wish-line min-h-[72px] text-[1.08rem] leading-[1.58] text-[#4a3e5a] sm:text-[1.18rem] ${visible ? 'is-visible' : ''}`}>
+    <p className={`wish-line min-h-[72px] text-[1rem] leading-[1.56] text-[#4b405a] sm:text-[1.06rem] ${visible ? 'is-visible' : ''}`}>
       {typedText}
       <span className={`typing-caret ${isTyping ? 'opacity-100' : 'opacity-0'}`}>|</span>
     </p>
