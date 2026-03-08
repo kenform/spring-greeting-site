@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 
-const PETALS_COUNT = 12;
+const PETALS_COUNT = 18;
 
 export default function PetalField() {
   const petals = useMemo(
@@ -10,11 +10,12 @@ export default function PetalField() {
       Array.from({ length: PETALS_COUNT }, (_, i) => ({
         id: i,
         left: `${(i * 100) / PETALS_COUNT + Math.random() * 6}%`,
-        size: 8 + Math.random() * 12,
-        delay: `${Math.random() * 8}s`,
-        duration: `${14 + Math.random() * 12}s`,
-        drift: `${-24 + Math.random() * 48}px`,
-        opacity: 0.2 + Math.random() * 0.4
+        size: 8 + Math.random() * 18,
+        delay: `${Math.random() * 9}s`,
+        duration: `${15 + Math.random() * 14}s`,
+        drift: `${-28 + Math.random() * 56}px`,
+        spin: `${Math.random() * 260}deg`,
+        opacity: 0.22 + Math.random() * 0.38
       })),
     []
   );
@@ -32,7 +33,8 @@ export default function PetalField() {
             animationDelay: petal.delay,
             animationDuration: petal.duration,
             opacity: petal.opacity,
-            ['--drift']: petal.drift
+            ['--drift']: petal.drift,
+            ['--spin-start']: petal.spin
           }}
         />
       ))}
