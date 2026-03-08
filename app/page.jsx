@@ -11,10 +11,17 @@ export default function HomePage() {
   const paragraphs = siteContent.message.split('\n').filter(Boolean);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#fff7fb] via-[#f8f4ff] to-[#eef7ff] px-5 py-10 text-[#4f3e58] sm:px-8">
+    <main className="relative min-h-screen overflow-hidden px-5 py-10 text-[#4f3e58] sm:px-8">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/spring-bg.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#2d20361f] via-[#3e2c4a33] to-[#1c1b2a4d]" />
+      <div className="absolute inset-0 backdrop-blur-[2px]" />
+
       <PetalField />
 
-      <section className="mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-3xl border border-white/60 bg-white/70 p-6 shadow-soft backdrop-blur-md sm:p-10">
+      <section className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-3xl border border-white/60 bg-white/72 p-6 shadow-soft backdrop-blur-md sm:p-10">
         <header className="text-center">
           <h1 className="text-3xl font-semibold leading-tight text-[#5f476d] sm:text-5xl">{title}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#7a6684] sm:text-lg">
