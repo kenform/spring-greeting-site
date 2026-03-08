@@ -1,6 +1,7 @@
 import ComplimentRotator from '../components/ComplimentRotator';
 import PetalField from '../components/PetalField';
 import AtmosphericBackground from '../components/AtmosphericBackground';
+import GlowParticles from '../components/GlowParticles';
 import { siteContent } from '../content/siteContent';
 
 function buildTitle(template, recipientName) {
@@ -15,8 +16,11 @@ export default function HomePage() {
     <main className="relative min-h-screen overflow-hidden px-4 py-8 text-[#4f3e58] sm:px-8 sm:py-10">
       <AtmosphericBackground />
       <PetalField />
+      <GlowParticles />
 
-      <section className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/55 bg-white/52 p-5 shadow-[0_20px_60px_rgba(48,30,64,0.18),0_0_46px_rgba(255,233,247,0.24)] backdrop-blur-2xl ring-1 ring-white/40 sm:p-10">
+      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/55 bg-white/52 p-5 shadow-[0_20px_60px_rgba(48,30,64,0.18),0_0_52px_rgba(255,233,247,0.22)] backdrop-blur-2xl ring-1 ring-white/40 sm:p-10">
+        <div className="card-shimmer" aria-hidden="true" />
+
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
           <h1 className="text-balance text-3xl font-semibold leading-[1.15] text-[#5d456d] sm:text-5xl">{title}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#745f82] sm:text-lg">
