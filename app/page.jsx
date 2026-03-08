@@ -44,7 +44,7 @@ export default function HomePage() {
           ))}
         </article>
 
-        <section className="animate-fade-up rounded-[1.35rem] border border-white/70 bg-gradient-to-r from-[#ffeaf1d9] via-[#f4ecffe6] to-[#e8f3ffe0] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_12px_34px_rgba(170,136,184,0.2)] sm:p-8" style={{ animationDelay: '0.25s' }}>
+        <section className="animate-fade-up rounded-[1.35rem] border border-[#efbfd6]/85 bg-gradient-to-r from-[#ffeaf1d9] via-[#f4ecffe6] to-[#e8f3ffe0] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_12px_34px_rgba(170,136,184,0.2)] sm:p-8" style={{ animationDelay: '0.25s' }}>
           <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.14em] text-[#7f608e]">Мои пожелания</h2>
           <ComplimentRotator
             compliments={siteContent.compliments}

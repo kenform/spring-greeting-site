@@ -194,6 +194,7 @@ body {
   border-radius: 0;
   background: transparent;
   -webkit-text-fill-color: inherit;
+  color: inherit;
   box-decoration-break: clone;
   display: inline-block;
   opacity: 0;
