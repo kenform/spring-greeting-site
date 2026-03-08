@@ -20,7 +20,7 @@ export default function HomePage() {
       <GlowParticles />
       <div className="card-backlight" aria-hidden="true" />
 
-      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_24px_70px_rgba(48,30,64,0.2),0_0_54px_rgba(255,233,247,0.2)] backdrop-blur-3xl ring-1 ring-white/70 sm:p-10">
+      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_34px_90px_rgba(44,32,62,0.2),0_12px_30px_rgba(70,52,92,0.12),0_0_56px_rgba(255,233,247,0.18)] backdrop-blur-3xl ring-1 ring-white/70 sm:p-10">
         <div className="card-border-shimmer" aria-hidden="true" />
         <div className="card-shimmer" aria-hidden="true" />
 
