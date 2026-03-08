@@ -4,6 +4,7 @@ import AtmosphericBackground from '../components/AtmosphericBackground';
 import GlowParticles from '../components/GlowParticles';
 import MainMessageAuto from '../components/MainMessageAuto';
 import TiltCard from '../components/TiltCard';
+import TabTitleSwitch from '../components/TabTitleSwitch';
 import { siteContent } from '../content/siteContent';
 
 function buildTitleParts(template, recipientName) {
@@ -16,6 +17,7 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden px-4 py-8 text-[#4f3e58] sm:px-8 sm:py-10">
+      <TabTitleSwitch />
       <AtmosphericBackground />
       <PetalField />
       <GlowParticles />
