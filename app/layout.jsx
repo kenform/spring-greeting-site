@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Весеннее поздравление',
-  description: 'Нежный мини-лендинг поздравление с праздником весны'
+  title: 'С праздником весны 🌸',
+  description: 'Тёплая весенняя открытка с поздравлением к 8 Марта.'
 };
 
 export default function RootLayout({ children }) {
