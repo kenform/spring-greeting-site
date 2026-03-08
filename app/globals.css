@@ -37,16 +37,25 @@ body {
   animation: fade-up 0.8s ease-out forwards;
 }
 
-.petal {
+.petal-svg {
   position: absolute;
-  top: -10%;
-  border-radius: 70% 30% 60% 40%;
-  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95), rgba(255, 182, 210, 0.78));
-  filter: blur(0.1px);
+  top: -14%;
   animation-name: petal-fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   will-change: transform;
+}
+
+.petal-far {
+  opacity: 0.48;
+}
+
+.petal-mid {
+  opacity: 0.58;
+}
+
+.petal-near {
+  opacity: 0.68;
 }
 
 @keyframes fade-up {
@@ -242,10 +251,16 @@ body {
   0% {
     transform: translate3d(0, 0, 0) rotate(var(--spin-start));
   }
-  50% {
-    transform: translate3d(var(--drift), 52vh, 0) rotate(calc(var(--spin-start) + 130deg));
+  30% {
+    transform: translate3d(calc(var(--drift) * 0.42), 34vh, 0) rotate(calc(var(--spin-start) + 70deg));
+  }
+  55% {
+    transform: translate3d(var(--drift), 62vh, 0) rotate(calc(var(--spin-start) + 145deg));
+  }
+  75% {
+    transform: translate3d(calc(var(--drift) + var(--sway)), 82vh, 0) rotate(calc(var(--spin-start) + 210deg));
   }
   100% {
-    transform: translate3d(calc(var(--drift) * -0.65), 110vh, 0) rotate(calc(var(--spin-start) + 270deg));
+    transform: translate3d(calc(var(--drift) * -0.55), 112vh, 0) rotate(calc(var(--spin-start) + 290deg));
   }
 }
