@@ -21,7 +21,7 @@ export default function HomePage() {
 
       <PetalField />
 
-      <section className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-3xl border border-white/60 bg-white/72 p-6 shadow-soft backdrop-blur-md sm:p-10">
+      <section className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-3xl border border-white/55 bg-white/58 p-6 shadow-[0_16px_50px_rgba(48,30,64,0.18),0_0_36px_rgba(255,232,246,0.22)] backdrop-blur-xl ring-1 ring-white/35 sm:p-10">
         <header className="text-center">
           <h1 className="text-3xl font-semibold leading-tight text-[#5f476d] sm:text-5xl">{title}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#7a6684] sm:text-lg">
