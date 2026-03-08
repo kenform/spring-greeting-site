@@ -19,7 +19,7 @@ export default function HomePage() {
       <PetalField />
       <GlowParticles />
 
-      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/55 bg-white/52 p-5 shadow-[0_20px_60px_rgba(48,30,64,0.18),0_0_52px_rgba(255,233,247,0.22)] backdrop-blur-2xl ring-1 ring-white/40 sm:p-10">
+      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/70 bg-white/88 p-5 shadow-[0_20px_60px_rgba(48,30,64,0.18),0_0_40px_rgba(255,233,247,0.16)] backdrop-blur-xl ring-1 ring-white/55 sm:p-10">
         <div className="card-shimmer" aria-hidden="true" />
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
