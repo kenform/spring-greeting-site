@@ -31,7 +31,7 @@ export default function HomePage() {
         </article>
 
         <section className="rounded-2xl border border-white/50 bg-gradient-to-r from-blush/65 via-lilac/55 to-sky/60 p-5 sm:p-7">
-          <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-[#8a6b96]">Тёплые слова</h2>
+          <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.16em] text-[#8a6b96]">Мои пожелания</h2>
           <ComplimentRotator
             compliments={siteContent.compliments}
             rotateMinutes={siteContent.complimentRotateMinutes}
