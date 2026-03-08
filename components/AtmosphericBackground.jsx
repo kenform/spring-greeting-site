@@ -21,7 +21,7 @@ export default function AtmosphericBackground() {
       <div
         className="absolute inset-[-2%] bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-out"
         style={{
-          backgroundImage: "url('/spring-bg.jpg')",
+          backgroundImage: "url('/spring-bg.png')",
           transform: `translate3d(${offset.x}px, ${offset.y}px, 0) scale(1.06)`
         }}
       />
