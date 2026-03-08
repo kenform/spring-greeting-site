@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 const BACK_COUNT = 24;
 const FRONT_COUNT = 7;
@@ -36,30 +36,38 @@ function makePetal(id, front = false) {
 }
 
 export default function PetalField() {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const backLayerRef = useRef(null);
+  const frontLayerRef = useRef(null);
+  const rafRef = useRef(null);
+  const offsetRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     if (typeof window === 'undefined' || !window.matchMedia('(hover: hover)').matches) return;
 
+    const apply = () => {
+      rafRef.current = null;
+      const { x, y } = offsetRef.current;
+      if (backLayerRef.current) backLayerRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      if (frontLayerRef.current) frontLayerRef.current.style.transform = `translate3d(${x * 0.65}px, ${y * 0.65}px, 0)`;
+    };
+
     const onMove = (event) => {
-      const x = ((event.clientX / window.innerWidth) - 0.5) * 4;
-      const y = ((event.clientY / window.innerHeight) - 0.5) * 4;
-      setOffset({ x, y });
+      offsetRef.current = {
+        x: ((event.clientX / window.innerWidth) - 0.5) * 4,
+        y: ((event.clientY / window.innerHeight) - 0.5) * 4
+      };
+      if (!rafRef.current) rafRef.current = requestAnimationFrame(apply);
     };
 
     window.addEventListener('mousemove', onMove, { passive: true });
-    return () => window.removeEventListener('mousemove', onMove);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
-  const backPetals = useMemo(
-    () => Array.from({ length: BACK_COUNT }, (_, i) => makePetal(`b-${i}`, false)),
-    []
-  );
-
-  const frontPetals = useMemo(
-    () => Array.from({ length: FRONT_COUNT }, (_, i) => makePetal(`f-${i}`, true)),
-    []
-  );
+  const backPetals = useMemo(() => Array.from({ length: BACK_COUNT }, (_, i) => makePetal(`b-${i}`, false)), []);
+  const frontPetals = useMemo(() => Array.from({ length: FRONT_COUNT }, (_, i) => makePetal(`f-${i}`, true)), []);
 
   const renderPetal = (petal, front = false) => (
     <svg
@@ -89,16 +97,18 @@ export default function PetalField() {
   return (
     <>
       <div
+        ref={backLayerRef}
         className="pointer-events-none fixed inset-0 z-[4] overflow-hidden transition-transform duration-500 ease-out"
-        style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }}
+        style={{ transform: 'translate3d(0,0,0)' }}
         aria-hidden="true"
       >
         {backPetals.map((p) => renderPetal(p, false))}
       </div>
 
       <div
+        ref={frontLayerRef}
         className="pointer-events-none fixed inset-0 z-[11] overflow-hidden transition-transform duration-700 ease-out"
-        style={{ transform: `translate3d(${offset.x * 0.65}px, ${offset.y * 0.65}px, 0)` }}
+        style={{ transform: 'translate3d(0,0,0)' }}
         aria-hidden="true"
       >
         {frontPetals.map((p) => renderPetal(p, true))}
