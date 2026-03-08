@@ -50,9 +50,11 @@ export default function HomePage() {
           />
         </section>
 
-        <footer className="animate-fade-up pt-2 text-right text-sm text-[#7d6788] sm:text-base" style={{ animationDelay: '0.35s' }}>
-          {siteContent.signature}
-        </footer>
+        {siteContent.signature ? (
+          <footer className="animate-fade-up pt-2 text-right text-sm text-[#7d6788] sm:text-base" style={{ animationDelay: '0.35s' }}>
+            {siteContent.signature}
+          </footer>
+        ) : null}
       </TiltCard>
     </main>
   );
