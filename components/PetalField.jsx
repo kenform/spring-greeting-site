@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const BACK_COUNT = 24;
 const FRONT_COUNT = 7;
+const BACK_COUNT_REDUCED = 12;
+const FRONT_COUNT_REDUCED = 3;
 
 function pickDepth(size) {
   if (size < 16) return 'far';
@@ -40,9 +42,14 @@ export default function PetalField() {
   const frontLayerRef = useRef(null);
   const rafRef = useRef(null);
   const offsetRef = useRef({ x: 0, y: 0 });
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia('(hover: hover)').matches) return;
+    if (typeof window === 'undefined') return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setReducedMotion(reduced);
+    if (!window.matchMedia('(hover: hover)').matches || reduced) return;
 
     const apply = () => {
       rafRef.current = null;
@@ -66,8 +73,15 @@ export default function PetalField() {
     };
   }, []);
 
-  const backPetals = useMemo(() => Array.from({ length: BACK_COUNT }, (_, i) => makePetal(`b-${i}`, false)), []);
-  const frontPetals = useMemo(() => Array.from({ length: FRONT_COUNT }, (_, i) => makePetal(`f-${i}`, true)), []);
+  const backPetals = useMemo(() => {
+    const count = reducedMotion ? BACK_COUNT_REDUCED : BACK_COUNT;
+    return Array.from({ length: count }, (_, i) => makePetal(`b-${i}`, false));
+  }, [reducedMotion]);
+
+  const frontPetals = useMemo(() => {
+    const count = reducedMotion ? FRONT_COUNT_REDUCED : FRONT_COUNT;
+    return Array.from({ length: count }, (_, i) => makePetal(`f-${i}`, true));
+  }, [reducedMotion]);
 
   const renderPetal = (petal, front = false) => (
     <svg

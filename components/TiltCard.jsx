@@ -10,7 +10,9 @@ export default function TiltCard({ className = '', children }) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    enabledRef.current = window.matchMedia('(hover: hover)').matches;
+    enabledRef.current =
+      window.matchMedia('(hover: hover)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }, []);
 
   const applyTilt = () => {

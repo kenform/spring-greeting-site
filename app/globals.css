@@ -279,3 +279,21 @@ body {
     opacity: 0;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .petal-svg,
+  .glow-particle,
+  .card-shimmer,
+  .card-border-shimmer::after,
+  .typing-caret,
+  .hero-title-name {
+    animation: none !important;
+  }
+
+  .wish-line {
+    transition: none;
+    opacity: 1;
+    filter: none;
+  }
+}

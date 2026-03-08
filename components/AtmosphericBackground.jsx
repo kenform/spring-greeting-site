@@ -6,7 +6,11 @@ export default function AtmosphericBackground() {
   const bgRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia('(hover: hover)').matches) return;
+    if (
+      typeof window === 'undefined' ||
+      !window.matchMedia('(hover: hover)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) return;
 
     let rafId = null;
     let nextX = 0;
