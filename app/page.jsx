@@ -19,7 +19,7 @@ export default function HomePage() {
       <PetalField />
       <GlowParticles />
 
-      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/70 bg-white/88 p-5 shadow-[0_20px_60px_rgba(48,30,64,0.18),0_0_40px_rgba(255,233,247,0.16)] backdrop-blur-xl ring-1 ring-white/55 sm:p-10">
+      <section className="glass-card relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-[2rem] border border-white/75 bg-white/85 p-5 shadow-[0_22px_62px_rgba(48,30,64,0.2),0_0_44px_rgba(255,233,247,0.18)] backdrop-blur-2xl ring-1 ring-white/60 sm:p-10">
         <div className="card-shimmer" aria-hidden="true" />
 
         <header className="animate-fade-up text-center" style={{ animationDelay: '0.05s' }}>
@@ -41,8 +41,8 @@ export default function HomePage() {
           ))}
         </article>
 
-        <section className="animate-fade-up rounded-2xl border border-white/55 bg-gradient-to-r from-[#ffdbe8b3] via-[#efe2ffc9] to-[#ddedffc7] p-6 shadow-[0_10px_36px_rgba(185,145,196,0.24)] sm:p-8" style={{ animationDelay: '0.25s' }}>
-          <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.14em] text-[#8a6b96]">Мои пожелания</h2>
+        <section className="animate-fade-up rounded-[1.35rem] border border-white/65 bg-gradient-to-r from-[#ffe7efcf] via-[#f2e9ffd9] to-[#e4f1ffd1] p-6 shadow-[0_12px_34px_rgba(170,136,184,0.22)] sm:p-8" style={{ animationDelay: '0.25s' }}>
+          <h2 className="mb-3 text-sm font-medium uppercase tracking-[0.14em] text-[#7f608e]">Мои пожелания</h2>
           <ComplimentRotator
             compliments={siteContent.compliments}
             rotateMinutes={siteContent.complimentRotateMinutes}
