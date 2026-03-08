@@ -26,6 +26,7 @@ export default function AtmosphericBackground() {
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#2b203638] via-[#3f2f4d4d] to-[#1d1a2963]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_42%,rgba(28,22,36,0.16)_100%)]" />
       <div className="absolute inset-0 backdrop-blur-[2.5px]" />
     </>
   );
