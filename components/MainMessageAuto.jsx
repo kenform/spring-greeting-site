@@ -10,9 +10,9 @@ export default function MainMessageAuto({ intro, variants = [] }) {
   }, [variants]);
 
   return (
-    <article className="animate-fade-up mx-auto w-full max-w-[565px] space-y-3.5 rounded-2xl bg-white/64 p-5 sm:p-6" style={{ animationDelay: '0.15s' }}>
-      <p className="text-[1.04rem] leading-[1.62] text-[#4a3f5a] sm:text-[1.12rem]">{intro}</p>
-      <p className="text-[1.04rem] leading-[1.62] text-[#4a3f5a] sm:text-[1.12rem]">{text}</p>
+    <article className="animate-fade-up mx-auto w-full max-w-[640px] space-y-4 rounded-2xl bg-white/62 px-5 py-6 sm:px-7 sm:py-7" style={{ animationDelay: '0.15s' }}>
+      <p className="text-[1.02rem] leading-[1.64] text-[#453a57] sm:text-[1.12rem]">{intro}</p>
+      <p className="text-[1.02rem] leading-[1.66] text-[#453a57] sm:text-[1.125rem]">{text}</p>
     </article>
   );
 }
